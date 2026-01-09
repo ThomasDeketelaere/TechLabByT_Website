@@ -1,20 +1,55 @@
-/* Make body full height and use flex to center content vertically */
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #000;
-    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    overflow: hidden;
 }
 
-/* Center header content */
+.bg-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;       /* fills screen, keeps aspect ratio */
+    background-position: center;  /* center image */
+    filter: blur(5px);            /* optional blur */
+    transition: opacity 0.35s linear; /* smooth fade */
+    opacity: 0;
+}
+
+.slide.visible {
+    opacity: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85); /* 80% black overlay */
+    z-index: -1;
+}
+
+/* Center content */
 header {
-    flex: 1; /* Take remaining vertical space */
+    flex: 1;
     display: flex;
-    justify-content: center; /* horizontal centering */
-    align-items: center;     /* vertical centering */
+    justify-content: center;
+    align-items: center;
 }
 
 .coming-soon {
@@ -23,7 +58,6 @@ header {
     text-shadow: 0 0 10px #fff;
 }
 
-/* Footer pinned to bottom */
 footer {
     font-size: 0.8rem;
     color: #aaa;

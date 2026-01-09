@@ -1,0 +1,32 @@
+/* Make body full height and use flex to center content vertically */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center header content */
+header {
+    flex: 1; /* Take remaining vertical space */
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+}
+
+.coming-soon {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 0 0 10px #fff;
+}
+
+/* Footer pinned to bottom */
+footer {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: center;
+    padding: 10px 0;
+}
